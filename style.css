@@ -1,0 +1,219 @@
+   body {
+    font-family: 'Quicksand', sans-serif; 
+    margin: 0;                           
+    padding: 0;                          
+    background: #f4f6f9;
+}
+
+/* cabeçalho principal*/
+.cabecalho {
+    position: static;                    
+    top: 0; left: 0; right: 0;           
+    background-color: #69b3f5;           
+    height: 80px;                        
+    z-index: 1000;                       /* Garante que o cabeçalho fique na frente de outros elementos */
+    display: flex;                       /* Ativa o Flexbox para alinhar itens internos */
+    align-items: center;                 /* Alinha os itens verticalmente no centro */
+    box-shadow: #7c7a7a 0px 2px 3px; 
+}
+
+.navbar {
+    width: 100%;                        
+    max-width: 1200px;                 
+    margin: 0 auto;                      /* Centraliza a barra de navegação na tela */
+    display: flex;                       /* Ativa o Flexbox */
+    justify-content: space-between;     
+    align-items: center;                
+    padding: 0 20px;                     /* Espaçamento interno nas laterais */
+    flex-wrap: wrap;                     /* Permite quebrar linha em telas menores */
+}
+
+.cabecalho ul {
+    list-style: none;                   
+    display: flex;                      
+    gap: 20px;                          
+}
+
+.cabecalho a {
+    color: black;                       
+    text-decoration: none;               
+    font-weight: bold;                   /* Deixa o texto em negrito */
+    font-size: 18px;                     
+    padding: 8px 18px;                   
+    transition: 0.3s;                    
+}
+
+/* Responsividade para telas de até 768px (Celulares/Tablets) */
+@media (max-width: 768px) {
+    .cabecalho {
+        height: auto;                    /* Permite que a altura se ajuste ao conteúdo */
+        padding: 10px 0;                 /* Espaçamento em cima e embaixo */
+    }
+    .navbar {
+        flex-direction: column;          /* Empilha os elementos verticalmente */
+        gap: 15px;                       /* Espaço entre o logo e o menu */
+    }
+    .cabecalho ul {
+        flex-direction: column;          /* Empilha os links do menu verticalmente */
+        gap: 10px;                       /* Espaço entre cada link */
+        padding: 0;                      /* Zera o padding padrão da lista */
+    }
+}       
+
+.logo-img {
+    height: 200px;                       
+    width: auto;                         
+}
+
+.cabecalho a:hover { 
+    color: #ffffff;                    
+}
+
+.card {
+    width: 300px;                        
+    display: inline-block;               /* Permite cards lado a lado e aceita largura/altura */
+    margin: 30px;                        
+    border-radius: 10px;                 
+    overflow: hidden;                    /* Corta o conteúdo que passar das bordas arredondadas */
+    background-color: white;            
+    text-align: center;                 
+    /* Brilho LED */
+    box-shadow: 0 0 5px #79daebff, 
+                0 0 8px #79daebff, 
+                0 0 8px #79daeb;         /* Efeito de brilho neon azulado nas bordas */
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease;    /* Suaviza o efeito de animação */
+}
+
+.card-image {
+    width: 100%;                         
+    height: 320px;                      
+    overflow: hidden;                    /* Esconde sobras da imagem */
+}
+
+.card-image img {
+    width: 100%;                       
+    height: 100%;                       
+    object-fit: cover;                   /* Preenche o espaço cortando a imagem sem distorcer */
+    display: block;                      /* Remove espaços em branco indesejados abaixo da imagem */
+}
+
+.card-conteiner {
+    padding: 15px;                       
+}
+
+.card:hover {
+    transform: translateY(-5px);          
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+}
+
+/* Estilo do container do formulário */
+#meuform {
+    display: flex;                       /* Ativa Flexbox no formulário */
+    flex-direction: column;              /* Empilha os inputs um embaixo do outro */
+    max-width: 350px;                   
+    gap: 15px;                           
+    padding: 20px;                       
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    border-radius: 10px;                 
+}
+
+/* Estilo geral dos inputs */
+input {
+    padding: 12px;                      
+    border: 1px solid #ccc;              
+    border-radius: 8px;                  
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 16px;                     
+    outline: none;                       /* Remove a borda preta padrão do navegador ao clicar */
+    transition: border-color 0.3s;       
+}
+
+
+/* Estilo do botão de cadastro */
+button {
+    padding: 12px;                      
+    background-color: #067be2;           
+    border: none;                        
+    border-radius: 8px;                  
+    cursor: pointer;                     /* Transforma a seta do mouse na "mãozinha" de clique */
+    font-family: 'Quicksand', sans-serif; 
+    font-weight: bold;                   
+    transition: background-color 0.3s;  
+}
+
+button:hover {
+    background-color: #76b0dc;           
+}
+
+/* Mensagem de erro das senhas */
+#mensagem_erro {
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 14px;                    
+    margin-top: -10px;                   /* Puxa a mensagem um pouco para cima do input anterior */
+    font-weight: 500;                    
+}
+
+/* Estilo do rodapé */
+footer {
+    background: #69b3f5;               
+    color: white;                        
+    padding: 10px;                      
+    display: flex;                      
+    justify-content: center;           
+    gap: 80px;                         
+    flex-wrap: wrap;                     
+}
+
+.footer-item {
+    text-align: center;                
+}
+
+.footer-item h3 {
+    margin-bottom: 10px;                 
+}
+
+.calendly-card {
+    color: #73ABDC;                      
+    text-decoration: none;              
+}
+
+/* Modais fundo embaçado */
+.modal {
+    position: fixed;                     
+    top: 0; left: 0;                     
+    width: 100%; height: 100%;          
+    background: rgba(0, 0, 0, 0.5);      
+    backdrop-filter: blur(8px);          /* Aplica o efeito de desfoque/embaçado ao fundo */
+    display: none;                       /* Fica escondido por padrão (muda para flex via JS) */
+    justify-content: center;             /* Centraliza a caixa do modal horizontalmente */
+    align-items: center;                 /* Centraliza a caixa do modal verticalmente */
+    z-index: 999;                        /* Garante que fique acima de tudo, exceto o header */
+}
+
+.modal-box {
+    background: white;                  
+    padding: 30px;                      
+    border-radius: 15px;                
+    width: 350px;                        
+    text-align: center;                  
+}
+
+.modal-box input { 
+    width: 100%;                        
+    padding: 10px;                       
+    margin: 8px 0;                     
+    border-radius: 8px;                  
+    border: 1px solid #ccc;             
+}
+
+.close-btn { 
+    background-color: #ccc;             
+    color: #333;                        
+}
+
+.mensagem { 
+    margin-top: 10px;                    
+    color: green;                       
+    display: none;                       /* Escondida por padrão */
+}
